@@ -1,14 +1,22 @@
 import { Component, signal, HostListener } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+interface DropdownItem {
+  name: string;
+  route: string;
+}
 
 interface NavItem {
   label: string;
   link?: string;
-  dropdown?: string[];
+  dropdown?: DropdownItem[];
 }
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  // Add RouterLink and RouterLinkActive so template routing directives work perfectly
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -17,9 +25,16 @@ export class Header {
   activeDropdown = signal<string | null>(null);
 
   navItems: NavItem[] = [
-    { label: 'Home', link: '#' },
+    { label: 'Home', link: '/' },
     { label: 'About Us', link: '/about' },
-    { label: 'Insights', dropdown: ['Vission & Mission', 'Testimonials', 'Rewards'] },
+    {
+      label: 'Insights', 
+      dropdown: [
+        { name: 'Vision & Mission', route: '/vision' },
+        { name: 'Testimonials', route: '/testimonials' },
+        { name: 'Rewards', route: '/rewards' }
+      ]
+    },
     { label: 'Gallery', link: '/gallery' },
     { label: 'Contact', link: '/contact' }
   ];
@@ -33,7 +48,6 @@ export class Header {
     this.activeDropdown.update(current => current === label ? null : label);
   }
 
-  // Closes open dropdowns automatically when clicking anywhere else on the document
   @HostListener('document:click')
   closeDropdowns(): void {
     if (this.activeDropdown()) {

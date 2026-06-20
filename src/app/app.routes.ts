@@ -5,6 +5,9 @@ import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { Gallery } from './gallery/gallery';
 import { Achievement } from './achievement/achievement';
+import { Vision } from './vision/vision';
+import { Testimonials } from './testimonials/testimonials';
+import { Rewards } from './rewards/rewards';
 
 export const routes: Routes = [
     {
@@ -14,7 +17,10 @@ export const routes: Routes = [
             { path: 'about', component: About },
             { path: 'contact', component: Contact },
             { path: 'gallery', component: Gallery },
-            { path: 'Achievement', component: Achievement }
+            { path: 'Achievement', component: Achievement },
+            { path: 'vision', component: Vision },
+            { path: 'testimonials', component: Testimonials },
+            { path: 'rewards', component: Rewards }
         ]
     }
 ];
