@@ -8,6 +8,7 @@ import { Achievement } from './achievement/achievement';
 import { Vision } from './vision/vision';
 import { Testimonials } from './testimonials/testimonials';
 import { Rewards } from './rewards/rewards';
+import { PracticeArea } from './practice-area/practice-area';
 
 export const routes: Routes = [
     {
@@ -20,7 +21,8 @@ export const routes: Routes = [
             { path: 'Achievement', component: Achievement },
             { path: 'vision', component: Vision },
             { path: 'testimonials', component: Testimonials },
-            { path: 'rewards', component: Rewards }
+            { path: 'rewards', component: Rewards },
+            { path: 'pratice-area', component: PracticeArea }
         ]
     }
 ];

@@ -27,6 +27,7 @@ export class Header {
   navItems: NavItem[] = [
     { label: 'Home', link: '/' },
     { label: 'About Us', link: '/about' },
+    { label: 'Practice Area', link: '/pratice-area' },
     {
       label: 'Insights', 
       dropdown: [
