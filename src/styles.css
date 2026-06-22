@@ -1,3 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* Apply smooth scrolling directly to the root HTML viewport layout document container */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Offset target sections so they don't hide underneath your sticky header */
+section,
+div[id] {
+  scroll-margin-top: 5rem; /* 80px (h-20) header safety spacing zone */
+}
+
+/* Keep your custom scrollbar rules clean and independent */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706; /* amber-600 */
+}

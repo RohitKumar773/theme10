@@ -11,18 +11,20 @@ import { Rewards } from './rewards/rewards';
 import { PracticeArea } from './practice-area/practice-area';
 
 export const routes: Routes = [
-    {
-        path: '', component: Viewport,
-        children: [
-            { path: '', component: Homepage },
-            { path: 'about', component: About },
-            { path: 'contact', component: Contact },
-            { path: 'gallery', component: Gallery },
-            { path: 'Achievement', component: Achievement },
-            { path: 'vision', component: Vision },
-            { path: 'testimonials', component: Testimonials },
-            { path: 'rewards', component: Rewards },
-            { path: 'pratice-area', component: PracticeArea }
-        ]
-    }
+    // {
+    //     path: '', component: Viewport,
+    //     children: [
+    //         { path: '', component: Homepage },
+    //         { path: 'about', component: About },
+    //         { path: 'contact', component: Contact },
+    //         { path: 'gallery', component: Gallery },
+    //         { path: 'Achievement', component: Achievement },
+    //         { path: 'vision', component: Vision },
+    //         { path: 'testimonials', component: Testimonials },
+    //         { path: 'rewards', component: Rewards },
+    //         { path: 'pratice-area', component: PracticeArea }
+    //     ]
+    // }
+
+    { path: '', component: Homepage }
 ];
